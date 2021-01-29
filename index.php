@@ -54,8 +54,6 @@
             2. mail contenga un punto e una chiocciola
             3. age sia un numero.
             Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
-
-            name=Marco&age=15&mail=al@lo.it
         -->
 
         <form method="get">
@@ -66,19 +64,19 @@
             <input type="submit">
         </form>
         
-        <h2>
+        <p>
             <?php
                 $name = $_GET['name'];
                 $age = $_GET['age'];
                 $mail = $_GET['mail'];
 
-                stripos( $mail , '@') && stripos( $mail , '.')
+               
 
 
                 echo $name;
                 echo $age;
                 echo $mail;
             ?>
-        </h2>
+        </p>
     </body>
 </html>
