@@ -17,6 +17,7 @@
             Olimpia Milano - Cantù | 55 - 60 
         -->
         <?php
+            // metodo uno
             $matches = [
                 "week_1"=>[
                     "home" => "Milano",
@@ -38,11 +39,19 @@
                 ],
             ];
             foreach ($matches as $weeks){
-                $teanOne = $weeks["home"];
-                $teanOnePoints = $weeks["homePoint"];
-                $teanTwo =$weeks["guest"];
-                $teanTwoPoints =$weeks["guestPoints"];
-                echo "<p>  $teanOne - $teanTwo | $teanOnePoints - $teanTwoPoints; </p>";
+                $teamOne = $weeks["home"]; $teamOnePoints = $weeks["homePoint"]; $teamTwo =$weeks["guest"]; $teamTwoPoints =$weeks["guestPoints"];
+                echo "<p>  $teamOne - $teamTwo | $teamOnePoints - $teamTwoPoints; </p>";
+            };
+
+            // metodo due
+            $matches_n = [
+                "week_1"=>[ "Milano", 55, "Cantù", 60,],
+                "week_2"=>["Roma", 45, "Genoa", 50,],
+                "week_3"=>["Firenze", 35, "Napoli", 70,],
+            ];
+            foreach ($matches_n as list($h,$h_p,$g,$g_p)){
+                $home = $h; $home_Points = $h_p; $guest = $g; $guest_Points = $g_p;
+                echo "<p>  $home - $guest | $home_Points - $guest_Points; </p>";
             };
         ?>
 
@@ -78,8 +87,6 @@
             <input type="submit">
         </form>
         
-        <p>
-        <?php formRefinery($rawName,$rawAge,$rawMail); ?>
-        </p>
+        <p> <?php formRefinery($rawName,$rawAge,$rawMail); ?> </p>
     </body>
 </html>
