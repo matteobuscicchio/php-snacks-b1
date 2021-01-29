@@ -56,6 +56,20 @@
             Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
         -->
 
+        <?php
+            $rawName = $_GET['name'];
+            $rawAge = $_GET['age'];
+            $rawMail = $_GET['mail'];
+
+            function formRefinery($name,$age,$mail) {
+                if (strlen($name) > 3 && filter_var($age, FILTER_VALIDATE_INT) && filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                    echo "accesso riuscito";
+                } else {
+                    echo "accesso negato";
+                };
+            };
+        ?>
+
         <form method="get">
             <input type="text" name="name" placeholder="Inserire nome">
             <input type="text" name="age" placeholder="Inserire età">
@@ -65,18 +79,7 @@
         </form>
         
         <p>
-            <?php
-                $name = $_GET['name'];
-                $age = $_GET['age'];
-                $mail = $_GET['mail'];
-
-               
-
-
-                echo $name;
-                echo $age;
-                echo $mail;
-            ?>
+        <?php formRefinery($rawName,$rawAge,$rawMail); ?>
         </p>
     </body>
 </html>
