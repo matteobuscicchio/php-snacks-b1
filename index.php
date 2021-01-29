@@ -55,6 +55,21 @@
                 $home = $h; $home_Points = $h_p; $guest = $g; $guest_Points = $g_p;
                 echo "<p> $home - $guest | $home_Points - $guest_Points; </p>";
             };
+
+            // metodo tre
+            $matches_n = [
+                "week_1"=>[ "Milano", 55, "Cantù", 60,],
+                "week_2"=>["Roma", 45, "Genoa", 50,],
+                "week_3"=>["Firenze", 35, "Napoli", 70,],
+            ];
+            echo "Metodo Tre";
+            function stampArray($matches_n){
+                foreach ($matches_n as list($h,$h_p,$g,$g_p)){
+                    $home = $h; $home_Points = $h_p; $guest = $g; $guest_Points = $g_p;
+                    echo "<p> $home - $guest | $home_Points - $guest_Points; </p>";
+                };
+            };
+            stampArray($matches_n);
         ?>
 
         <!--
