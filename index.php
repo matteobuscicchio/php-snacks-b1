@@ -53,17 +53,32 @@
             1. name sia più lungo di 3 caratteri,
             2. mail contenga un punto e una chiocciola
             3. age sia un numero.
-            Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
+            Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+
+            name=Marco&age=15&mail=al@lo.it
         -->
 
-        <?php
-            $form = [
-                "name" => $_GET['name'],
-                "mail" => $_GET['mail'],
-                "age" => $_GET['age'],
-            ];
+        <form method="get">
+            <input type="text" name="name" placeholder="Inserire nome">
+            <input type="text" name="age" placeholder="Inserire età">
+            <!-- type cambiato in text per prevenmire il check automatico dell'email -->
+            <input type="text" name="mail" placeholder="Inserire e-mail">
+            <input type="submit">
+        </form>
+        
+        <h2>
+            <?php
+                $name = $_GET['name'];
+                $age = $_GET['age'];
+                $mail = $_GET['mail'];
 
-            var_dump($form);
-        ?>
+                stripos( $mail , '@') && stripos( $mail , '.')
+
+
+                echo $name;
+                echo $age;
+                echo $mail;
+            ?>
+        </h2>
     </body>
 </html>
