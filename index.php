@@ -38,9 +38,10 @@
                     "guestPoints" => 70,
                 ],
             ];
+            echo "Metodo Uno";
             foreach ($matches as $weeks){
                 $teamOne = $weeks["home"]; $teamOnePoints = $weeks["homePoint"]; $teamTwo =$weeks["guest"]; $teamTwoPoints =$weeks["guestPoints"];
-                echo "<p>  $teamOne - $teamTwo | $teamOnePoints - $teamTwoPoints; </p>";
+                echo "<p> $teamOne - $teamTwo | $teamOnePoints - $teamTwoPoints; </p>";
             };
 
             // metodo due
@@ -49,9 +50,10 @@
                 "week_2"=>["Roma", 45, "Genoa", 50,],
                 "week_3"=>["Firenze", 35, "Napoli", 70,],
             ];
+            echo "Metodo Due";
             foreach ($matches_n as list($h,$h_p,$g,$g_p)){
                 $home = $h; $home_Points = $h_p; $guest = $g; $guest_Points = $g_p;
-                echo "<p>  $home - $guest | $home_Points - $guest_Points; </p>";
+                echo "<p> $home - $guest | $home_Points - $guest_Points; </p>";
             };
         ?>
 
