@@ -14,8 +14,39 @@
             Ogni array della partita avrà una squadra di casa e una squadra ospite, 
             punti fatti dalla squadra di casa e punti fatti dalla squadra ospite.
             Stampiamo a schermo tutte le partite con questo schema:
-            Olimpia Milano - Cantù | 55 - 60
+            Olimpia Milano - Cantù | 55 - 60 
+        -->
+        <?php
+            $matches = [
+                "week_1"=>[
+                    "home" => "Milano",
+                    "homePoint" => 55,
+                    "guest" => "Cantù",
+                    "guestPoints" => 60,
+                ],
+                "week_2"=>[
+                    "home" => "Roma",
+                    "homePoint" => 45,
+                    "guest" => "Genoa",
+                    "guestPoints" => 50,
+                ],
+                "week_3"=>[
+                    "home" => "Firenze",
+                    "homePoint" => 35,
+                    "guest" => "Napoli",
+                    "guestPoints" => 70,
+                ],
+            ];
+            foreach ($matches as $weeks){
+                $teanOne = $weeks["home"];
+                $teanOnePoints = $weeks["homePoint"];
+                $teanTwo =$weeks["guest"];
+                $teanTwoPoints =$weeks["guestPoints"];
+                echo "<p>  $teanOne - $teanTwo | $teanOnePoints $teanTwoPoints; </p>";
+            };
+        ?>
 
+        <!--
             PHP Snack 2:
             Passare come parametri GET name, mail e age e verificare (cercando i metodi che non
             conosciamo nella documentazione) che:
@@ -25,40 +56,6 @@
             Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
         -->
 
-        <?php
-            $matches = [
-                "weeks_1"=>[
-                    "home" => "Milano",
-                    "homePoint" => 55,
-                    "guest" => "Cantù",
-                    "guestPoints" => 60,
-                ],
-                "weeks_2"=>[
-                    "home" => "Roma",
-                    "homePoint" => 45,
-                    "guest" => "Genoa",
-                    "guestPoints" => 50,
-                ],
-                "weeks_3"=>[
-                    "home" => "Firenze",
-                    "homePoint" => 35,
-                    "guest" => "Napoli",
-                    "guestPoints" => 70,
-                ],
-            ];
-        ?>
-
-        <ul>
-            <?php
-                foreach ($matches as $weeks){
-                    $teanOne = $weeks["home"];
-                    $teanOnePoints = $weeks["homePoint"];
-                    $teanTwo =$weeks["guest"];
-                    $teanTwoPoints =$weeks["guestPoints"];
-                    
-                    echo "<li>  $teanOne - $teanTwo | $teanOnePoints $teanTwoPoints; </li>";
-                };
-            ?>
-        </ul>
+        <?php ?>
     </body>
 </html>
