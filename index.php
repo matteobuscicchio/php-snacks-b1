@@ -42,7 +42,7 @@
                 $teanOnePoints = $weeks["homePoint"];
                 $teanTwo =$weeks["guest"];
                 $teanTwoPoints =$weeks["guestPoints"];
-                echo "<p>  $teanOne - $teanTwo | $teanOnePoints $teanTwoPoints; </p>";
+                echo "<p>  $teanOne - $teanTwo | $teanOnePoints - $teanTwoPoints; </p>";
             };
         ?>
 
