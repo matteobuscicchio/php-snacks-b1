@@ -4,13 +4,15 @@
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>foglio esempi e test</title>
+        <title>php-snacks-b1</title>
     </head>
     <body>
-
         <!-- 
             PHP Snack 1:
-            Creiamo un array 'matches' contenente altri array i quali rappresentano delle partite di basket di un’ipotetica tappa del calendario. Ogni array della partita avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite.
+            Creiamo un array 'matches' contenente altri array 
+            i quali rappresentano delle partite di basket di un’ipotetica tappa del calendario. 
+            Ogni array della partita avrà una squadra di casa e una squadra ospite, 
+            punti fatti dalla squadra di casa e punti fatti dalla squadra ospite.
             Stampiamo a schermo tutte le partite con questo schema:
             Olimpia Milano - Cantù | 55 - 60
 
@@ -23,7 +25,40 @@
             Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
         -->
 
-        <?php ?>
-    
+        <?php
+            $matches = [
+                "weeks_1"=>[
+                    "home" => "Milano",
+                    "homePoint" => 55,
+                    "guest" => "Cantù",
+                    "guestPoints" => 60,
+                ],
+                "weeks_2"=>[
+                    "home" => "Roma",
+                    "homePoint" => 45,
+                    "guest" => "Genoa",
+                    "guestPoints" => 50,
+                ],
+                "weeks_3"=>[
+                    "home" => "Firenze",
+                    "homePoint" => 35,
+                    "guest" => "Napoli",
+                    "guestPoints" => 70,
+                ],
+            ];
+        ?>
+
+        <ul>
+            <?php
+                foreach ($matches as $weeks){
+                    $teanOne = $weeks["home"];
+                    $teanOnePoints = $weeks["homePoint"];
+                    $teanTwo =$weeks["guest"];
+                    $teanTwoPoints =$weeks["guestPoints"];
+                    
+                    echo "<li>  $teanOne - $teanTwo | $teanOnePoints $teanTwoPoints; </li>";
+                };
+            ?>
+        </ul>
     </body>
 </html>
