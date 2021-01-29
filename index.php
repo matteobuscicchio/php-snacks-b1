@@ -38,7 +38,7 @@
                     "guestPoints" => 70,
                 ],
             ];
-            echo "Metodo Uno";
+            echo "<h2>Metodo Uno</h2>";
             foreach ($matches as $weeks){
                 $teamOne = $weeks["home"]; $teamOnePoints = $weeks["homePoint"]; $teamTwo =$weeks["guest"]; $teamTwoPoints =$weeks["guestPoints"];
                 echo "<p> $teamOne - $teamTwo | $teamOnePoints - $teamTwoPoints; </p>";
@@ -50,7 +50,7 @@
                 "week_2"=>["Roma", 45, "Genoa", 50,],
                 "week_3"=>["Firenze", 35, "Napoli", 70,],
             ];
-            echo "Metodo Due";
+            echo "<h2>Metodo Due</h2>";
             foreach ($matches_n as list($h,$h_p,$g,$g_p)){
                 $home = $h; $home_Points = $h_p; $guest = $g; $guest_Points = $g_p;
                 echo "<p> $home - $guest | $home_Points - $guest_Points; </p>";
@@ -62,7 +62,7 @@
                 "week_2"=>["Roma", 45, "Genoa", 50,],
                 "week_3"=>["Firenze", 35, "Napoli", 70,],
             ];
-            echo "Metodo Tre";
+            echo "<h2>Metodo Tre</h2>";
             function stampArray($matches_n){
                 foreach ($matches_n as list($h,$h_p,$g,$g_p)){
                     $home = $h; $home_Points = $h_p; $guest = $g; $guest_Points = $g_p;
@@ -81,8 +81,10 @@
             3. age sia un numero.
             Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
         -->
-
         <?php
+
+            echo "<h2>Form</h2>";
+
             $rawName = $_GET['name'];
             $rawAge = $_GET['age'];
             $rawMail = $_GET['mail'];
