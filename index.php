@@ -81,9 +81,17 @@
             3. age sia un numero.
             Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
         -->
-        <?php
 
-            echo "<h2>Form</h2>";
+        <form method="get">
+            <input type="text" name="name" placeholder="Inserire nome">
+            <input type="text" name="age" placeholder="Inserire età">
+            <!-- type cambiato in text per prevenmire il check automatico dell'email -->
+            <input type="text" name="mail" placeholder="Inserire e-mail">
+            <input type="submit">
+        </form>
+
+        <?php
+            echo "<h2>Form: metodo uno</h2>";
 
             $rawName = $_GET['name'];
             $rawAge = $_GET['age'];
@@ -97,15 +105,34 @@
                 };
             };
         ?>
-
-        <form method="get">
-            <input type="text" name="name" placeholder="Inserire nome">
-            <input type="text" name="age" placeholder="Inserire età">
-            <!-- type cambiato in text per prevenmire il check automatico dell'email -->
-            <input type="text" name="mail" placeholder="Inserire e-mail">
-            <input type="submit">
-        </form>
-        
         <p> <?php formRefinery($rawName,$rawAge,$rawMail); ?> </p>
+
+        <?php
+            echo "<h2>Form: metodo due</h2>";
+            $rawName = $_GET['name'];
+            $age = filter_var($_GET['age'], FILTER_VALIDATE_INT);
+            $mail = filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL);
+            if (strlen($rawName) < 3 || $age === false || $mail === false) {
+                echo "accesso negato";
+            } else {
+                echo "accesso riuscito";
+            };
+        ?>
+
+
+        <?php
+            echo "<h2>Form: metodo tre</h2>";
+            $rawName = $_GET['name'];
+            $age = is_numeric ($_GET['age']);
+            $mail = strpos( $_GET['mail'] , '@').strpos( $_GET['mail'] , '.');
+            var_export($rawName);
+            var_export($age);
+            var_dump($mail);
+            if (strlen($rawName) < 3 || $age === false || strlen($mail) <= 2 || $mail === '') {
+                echo "accesso negato";
+            } else {
+                echo "accesso riuscito";
+            };
+        ?>
     </body>
 </html>
